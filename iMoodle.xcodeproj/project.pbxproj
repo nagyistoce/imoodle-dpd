@@ -20,6 +20,15 @@
 		6200663B14D1E17B00847E6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6200661C14D1E17A00847E6B /* Foundation.framework */; };
 		6200664314D1E17B00847E6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6200664114D1E17B00847E6B /* InfoPlist.strings */; };
 		6200664614D1E17B00847E6B /* iMoodleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6200664514D1E17B00847E6B /* iMoodleTests.m */; };
+		6200668714D1E55400847E6B /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6200667D14D1E47D00847E6B /* libRestKit.a */; };
+		6200668E14D1E58500847E6B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6200668814D1E58500847E6B /* CFNetwork.framework */; };
+		6200668F14D1E58500847E6B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6200668914D1E58500847E6B /* CoreData.framework */; };
+		6200669014D1E58500847E6B /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6200668A14D1E58500847E6B /* libxml2.dylib */; };
+		6200669114D1E58500847E6B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6200668B14D1E58500847E6B /* MobileCoreServices.framework */; };
+		6200669214D1E58500847E6B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6200668C14D1E58500847E6B /* Security.framework */; };
+		6200669314D1E58500847E6B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6200668D14D1E58500847E6B /* SystemConfiguration.framework */; };
+		626C69F614D3469F009AC790 /* mdCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 626C69F514D3469F009AC790 /* mdCourse.m */; };
+		626C69F914D34E64009AC790 /* mdUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 626C69F814D34E64009AC790 /* mdUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +39,41 @@
 			remoteGlobalIDString = 6200661514D1E17A00847E6B;
 			remoteInfo = iMoodle;
 		};
+		6200667C14D1E47D00847E6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6200667214D1E47D00847E6B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		6200667E14D1E47D00847E6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6200667214D1E47D00847E6B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		6200668014D1E47D00847E6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6200667214D1E47D00847E6B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		6200668214D1E47D00847E6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6200667214D1E47D00847E6B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		6200668514D1E54200847E6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6200667214D1E47D00847E6B /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -37,21 +81,32 @@
 		6200661A14D1E17A00847E6B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6200661C14D1E17A00847E6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6200661E14D1E17A00847E6B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		6200662214D1E17A00847E6B /* iMoodle-Info.plist */ = {isa = PBXFileReference; path = "iMoodle-Info.plist"; sourceTree = "<group>"; };
+		6200662214D1E17A00847E6B /* iMoodle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMoodle-Info.plist"; sourceTree = "<group>"; };
 		6200662414D1E17A00847E6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6200662614D1E17A00847E6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6200662814D1E17A00847E6B /* iMoodle-Prefix.pch */ = {isa = PBXFileReference; path = "iMoodle-Prefix.pch"; sourceTree = "<group>"; };
-		6200662914D1E17A00847E6B /* mdAppDelegate.h */ = {isa = PBXFileReference; path = mdAppDelegate.h; sourceTree = "<group>"; };
+		6200662814D1E17A00847E6B /* iMoodle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMoodle-Prefix.pch"; sourceTree = "<group>"; };
+		6200662914D1E17A00847E6B /* mdAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mdAppDelegate.h; sourceTree = "<group>"; };
 		6200662A14D1E17A00847E6B /* mdAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mdAppDelegate.m; sourceTree = "<group>"; };
-		6200662C14D1E17A00847E6B /* mdViewController.h */ = {isa = PBXFileReference; path = mdViewController.h; sourceTree = "<group>"; };
+		6200662C14D1E17A00847E6B /* mdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mdViewController.h; sourceTree = "<group>"; };
 		6200662D14D1E17A00847E6B /* mdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mdViewController.m; sourceTree = "<group>"; };
 		6200663014D1E17A00847E6B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/mdViewController.xib; sourceTree = "<group>"; };
 		6200663714D1E17B00847E6B /* iMoodleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMoodleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6200663814D1E17B00847E6B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		6200664014D1E17B00847E6B /* iMoodleTests-Info.plist */ = {isa = PBXFileReference; path = "iMoodleTests-Info.plist"; sourceTree = "<group>"; };
+		6200664014D1E17B00847E6B /* iMoodleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMoodleTests-Info.plist"; sourceTree = "<group>"; };
 		6200664214D1E17B00847E6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6200664414D1E17B00847E6B /* iMoodleTests.h */ = {isa = PBXFileReference; path = iMoodleTests.h; sourceTree = "<group>"; };
+		6200664414D1E17B00847E6B /* iMoodleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iMoodleTests.h; sourceTree = "<group>"; };
 		6200664514D1E17B00847E6B /* iMoodleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iMoodleTests.m; sourceTree = "<group>"; };
+		6200667214D1E47D00847E6B /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		6200668814D1E58500847E6B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6200668914D1E58500847E6B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6200668A14D1E58500847E6B /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		6200668B14D1E58500847E6B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		6200668C14D1E58500847E6B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6200668D14D1E58500847E6B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		626C69F414D3469F009AC790 /* mdCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdCourse.h; sourceTree = "<group>"; };
+		626C69F514D3469F009AC790 /* mdCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdCourse.m; sourceTree = "<group>"; };
+		626C69F714D34E64009AC790 /* mdUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdUser.h; sourceTree = "<group>"; };
+		626C69F814D34E64009AC790 /* mdUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +114,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6200668E14D1E58500847E6B /* CFNetwork.framework in Frameworks */,
+				6200668F14D1E58500847E6B /* CoreData.framework in Frameworks */,
+				6200669014D1E58500847E6B /* libxml2.dylib in Frameworks */,
+				6200669114D1E58500847E6B /* MobileCoreServices.framework in Frameworks */,
+				6200669214D1E58500847E6B /* Security.framework in Frameworks */,
+				6200669314D1E58500847E6B /* SystemConfiguration.framework in Frameworks */,
+				6200668714D1E55400847E6B /* libRestKit.a in Frameworks */,
 				6200661B14D1E17A00847E6B /* UIKit.framework in Frameworks */,
 				6200661D14D1E17A00847E6B /* Foundation.framework in Frameworks */,
 				6200661F14D1E17A00847E6B /* CoreGraphics.framework in Frameworks */,
@@ -81,6 +143,7 @@
 		6200660B14D1E17A00847E6B = {
 			isa = PBXGroup;
 			children = (
+				6200667214D1E47D00847E6B /* RestKit.xcodeproj */,
 				6200662014D1E17A00847E6B /* iMoodle */,
 				6200663E14D1E17B00847E6B /* iMoodleTests */,
 				6200661914D1E17A00847E6B /* Frameworks */,
@@ -100,6 +163,12 @@
 		6200661914D1E17A00847E6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6200668814D1E58500847E6B /* CFNetwork.framework */,
+				6200668914D1E58500847E6B /* CoreData.framework */,
+				6200668A14D1E58500847E6B /* libxml2.dylib */,
+				6200668B14D1E58500847E6B /* MobileCoreServices.framework */,
+				6200668C14D1E58500847E6B /* Security.framework */,
+				6200668D14D1E58500847E6B /* SystemConfiguration.framework */,
 				6200661A14D1E17A00847E6B /* UIKit.framework */,
 				6200661C14D1E17A00847E6B /* Foundation.framework */,
 				6200661E14D1E17A00847E6B /* CoreGraphics.framework */,
@@ -111,6 +180,7 @@
 		6200662014D1E17A00847E6B /* iMoodle */ = {
 			isa = PBXGroup;
 			children = (
+				626C69F014D3465F009AC790 /* Model */,
 				6200662914D1E17A00847E6B /* mdAppDelegate.h */,
 				6200662A14D1E17A00847E6B /* mdAppDelegate.m */,
 				6200662C14D1E17A00847E6B /* mdViewController.h */,
@@ -151,6 +221,28 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6200667314D1E47D00847E6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6200667D14D1E47D00847E6B /* libRestKit.a */,
+				6200667F14D1E47D00847E6B /* RestKitTests.octest */,
+				6200668114D1E47D00847E6B /* RestKit.framework */,
+				6200668314D1E47D00847E6B /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		626C69F014D3465F009AC790 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				626C69F414D3469F009AC790 /* mdCourse.h */,
+				626C69F514D3469F009AC790 /* mdCourse.m */,
+				626C69F714D34E64009AC790 /* mdUser.h */,
+				626C69F814D34E64009AC790 /* mdUser.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +257,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6200668614D1E54200847E6B /* PBXTargetDependency */,
 			);
 			name = iMoodle;
 			productName = iMoodle;
@@ -208,6 +301,12 @@
 			mainGroup = 6200660B14D1E17A00847E6B;
 			productRefGroup = 6200661714D1E17A00847E6B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6200667314D1E47D00847E6B /* Products */;
+					ProjectRef = 6200667214D1E47D00847E6B /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6200661514D1E17A00847E6B /* iMoodle */,
@@ -215,6 +314,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6200667D14D1E47D00847E6B /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = 6200667C14D1E47D00847E6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6200667F14D1E47D00847E6B /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = 6200667E14D1E47D00847E6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6200668114D1E47D00847E6B /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = 6200668014D1E47D00847E6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6200668314D1E47D00847E6B /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = 6200668214D1E47D00847E6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6200661414D1E17A00847E6B /* Resources */ = {
@@ -260,6 +390,8 @@
 				6200662714D1E17A00847E6B /* main.m in Sources */,
 				6200662B14D1E17A00847E6B /* mdAppDelegate.m in Sources */,
 				6200662E14D1E17A00847E6B /* mdViewController.m in Sources */,
+				626C69F614D3469F009AC790 /* mdCourse.m in Sources */,
+				626C69F914D34E64009AC790 /* mdUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +410,11 @@
 			isa = PBXTargetDependency;
 			target = 6200661514D1E17A00847E6B /* iMoodle */;
 			targetProxy = 6200663C14D1E17B00847E6B /* PBXContainerItemProxy */;
+		};
+		6200668614D1E54200847E6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = 6200668514D1E54200847E6B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -359,7 +496,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMoodle/iMoodle-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/RestKit/Build\"";
 				INFOPLIST_FILE = "iMoodle/iMoodle-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -370,7 +512,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMoodle/iMoodle-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/RestKit/Build\"";
 				INFOPLIST_FILE = "iMoodle/iMoodle-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -429,6 +576,7 @@
 				6200664B14D1E17B00847E6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6200664C14D1E17B00847E6B /* Build configuration list for PBXNativeTarget "iMoodleTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +585,7 @@
 				6200664E14D1E17B00847E6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
