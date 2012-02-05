@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RestKit/RestKit.h>
 
-@interface mdViewController : UIViewController
+@interface mdViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, RKObjectLoaderDelegate>
+{
+	UITableView* _tableView;
+	
+	NSString* _token;
+	NSArray* _courses;
+}
 
 @end

@@ -10,13 +10,13 @@
 
 @implementation mdUser
 
-@synthesize courseid;
-@synthesize userid;
-@synthesize firstname;
-@synthesize lastname;
-@synthesize fullname;
-@synthesize username;
-@synthesize profileimgurl;
-@synthesize profileimgurlsmall;
+@dynamic courseid;
+@dynamic userid;
+@dynamic firstname;
+@dynamic lastname;
+@dynamic fullname;
+@dynamic username;
+@dynamic profileimgurl;
+@dynamic profileimgurlsmall;
 
 @end

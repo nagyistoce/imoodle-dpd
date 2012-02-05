@@ -10,28 +10,28 @@
 
 @implementation mdCourse
 
-@synthesize id;
-@synthesize shortname;
-@synthesize categoryid;
-@synthesize categorysortorder;
-@synthesize fullname;
-@synthesize idnumber;
-@synthesize summary;
-@synthesize summaryformat;
-@synthesize format;
-@synthesize showgrades;
-@synthesize newsitems;
-@synthesize numsections;
-@synthesize maxbytes;
-@synthesize visible;
-@synthesize hiddensections;
-@synthesize groupmodeforce;
-@synthesize defaultgroupingid;
-@synthesize timecreated;
-@synthesize timemodified;
-@synthesize enablecompletion;
-@synthesize completionstartonenrol;
-@synthesize completionnotify;
-@synthesize lang;
+@dynamic id;
+@dynamic shortname;
+@dynamic categoryid;
+@dynamic categorysortorder;
+@dynamic fullname;
+@dynamic idnumber;
+@dynamic summary;
+@dynamic summaryformat;
+@dynamic format;
+@dynamic showgrades;
+@dynamic newsitems;
+@dynamic numsections;
+@dynamic maxbytes;
+@dynamic visible;
+@dynamic hiddensections;
+@dynamic groupmodeforce;
+@dynamic defaultgroupingid;
+@dynamic timecreated;
+@dynamic timemodified;
+@dynamic enablecompletion;
+@dynamic completionstartonenrol;
+@dynamic completionnotify;
+@dynamic lang;
 
 @end
