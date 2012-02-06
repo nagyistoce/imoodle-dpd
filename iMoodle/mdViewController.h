@@ -11,7 +11,7 @@
 
 @interface mdViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, RKObjectLoaderDelegate>
 {
-	UITableView* _tableView;
+	IBOutlet UITableView* _tableView;
 	
 	NSString* _token;
 	NSArray* _courses;

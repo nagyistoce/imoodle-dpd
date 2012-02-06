@@ -25,18 +25,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	RKObjectManager* restKitObjectManager = [RKObjectManager sharedManager];
-	restKitObjectManager.client.baseURL = @"http://moodle.openfmi.net/";
+	restKitObjectManager.client.baseURL = @"http://moodle.openfmi.net";
 	restKitObjectManager.acceptMIMEType = RKMIMETypeXML;
-	NSString* resourcePath = @"webservice/rest/server.php?wstoken=091d9d94bf2044c7d54aebcb1420dc53&wsfunction=moodle_course_get_courses";
-	[restKitObjectManager loadObjectsAtResourcePath:resourcePath delegate:self block:^(RKObjectLoader * loader)
-	{ 
-		loader.objectMapping = [restKitObjectManager.mappingProvider objectMappingForClass:[mdCourse class]];
-	}];
-	_token = @"091d9d94bf2044c7d54aebcb1420dc53";
+	NSString* resourcePath = @"/webservice/rest/server.php?wstoken=091d9d94bf2044c7d54aebcb1420dc53&wsfunction=moodle_course_get_courses";
+	[restKitObjectManager loadObjectsAtResourcePath:resourcePath delegate:self];
 }
 
 - (void)viewDidUnload
 {
+	_tableView = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -75,6 +72,24 @@
     NSLog(@"Loaded payload: %@", [response bodyAsString]);
 }
 
+- (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData
+{
+	NSDictionary* response = [*mappableData valueForKey:@"RESPONSE"];
+	NSDictionary* multiple = [response valueForKey:@"MULTIPLE"];
+	NSArray* singles = [multiple valueForKey:@"SINGLE"];
+	NSMutableArray* objects = [NSMutableArray new];
+	for (NSDictionary* single in singles)
+	{
+		NSMutableDictionary* result = [NSMutableDictionary new];
+		for (NSDictionary* keyValuePair in [single valueForKey:@"KEY"])
+		{
+			[result setValue:[keyValuePair valueForKey:@"VALUE"] forKey:[keyValuePair valueForKey:@"name"]];
+		}
+		[objects addObject:result];
+	}
+	*mappableData = objects;
+}
+
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects 
 {
 	NSLog(@"Loaded statuses: %@", objects);
@@ -90,7 +105,7 @@
 
 #pragma mark UITableViewDelegate methods
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath 
+- (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
 	CGSize size = [[[_courses objectAtIndex:indexPath.row] text] sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(300, 9000)];
 	return size.height + 10;
@@ -98,12 +113,12 @@
 
 #pragma mark UITableViewDataSource methods
 
-- (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section 
+- (NSInteger)tableView:(UITableView*)table numberOfRowsInSection:(NSInteger)section 
 {
 	return [_courses count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+- (UITableViewCell *)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
 	NSString* reuseIdentifier = @"Tweet Cell";
 	UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];

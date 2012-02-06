@@ -44,8 +44,9 @@
 	[restKitObjectMapping mapKeyPath:@"completionstartonenrol" toAttribute:@"completionstartonenrol"];
 	[restKitObjectMapping mapKeyPath:@"completionnotify" toAttribute:@"completionnotify"];
 	[restKitObjectMapping mapKeyPath:@"lang" toAttribute:@"lang"];
-	RKObjectManager* restKitObjectManager = [RKObjectManager objectManagerWithBaseURL:@"http://moodle.openfmi.net/"];
-	[restKitObjectManager.mappingProvider setMapping:restKitObjectMapping forKeyPath:@"course"];
+	RKObjectManager* restKitObjectManager = [RKObjectManager objectManagerWithBaseURL:@"http://moodle.openfmi.net"];
+	restKitObjectManager.acceptMIMEType = RKMIMETypeXML;
+	[restKitObjectManager.mappingProvider setMapping:restKitObjectMapping forKeyPath:@""];
 }
 
 -(void)mapUser
