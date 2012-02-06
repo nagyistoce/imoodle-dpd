@@ -22,7 +22,6 @@
 	// Do any additional setup after loading the view, typically from a nib.
 	RKObjectManager* restKitObjectManager = [RKObjectManager sharedManager];
 	restKitObjectManager.client.baseURL = @"http://moodle.openfmi.net";
-	restKitObjectManager.acceptMIMEType = RKMIMETypeXML;
 	NSString* resourcePath = @"/webservice/rest/server.php?wstoken=091d9d94bf2044c7d54aebcb1420dc53&wsfunction=moodle_course_get_courses";
 	[restKitObjectManager loadObjectsAtResourcePath:resourcePath delegate:self];
 }
@@ -78,7 +77,8 @@
 {
 	NSString* reuseIdentifier = @"Moodle Cell";
 	UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-	if (cell == nil) {
+	if (cell == nil) 
+	{
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
 		cell.textLabel.font = [UIFont systemFontOfSize:14];
 		cell.textLabel.numberOfLines = 0;
