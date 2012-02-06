@@ -37,10 +37,7 @@
 
 - (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData
 {
-	NSDictionary* response = [*mappableData valueForKey:@"RESPONSE"];
-	NSDictionary* multiple = [response valueForKey:@"MULTIPLE"];
-	NSArray* singles = [multiple valueForKey:@"SINGLE"];
-	for (NSDictionary* single in singles)
+	for (NSDictionary* single in [[[*mappableData valueForKey:@"RESPONSE"] valueForKey:@"MULTIPLE"] valueForKey:@"SINGLE"])
 	{
 		for (NSDictionary* keyValuePair in [single valueForKey:@"KEY"])
 		{

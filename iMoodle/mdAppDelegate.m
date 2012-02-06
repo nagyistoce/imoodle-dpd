@@ -69,6 +69,7 @@
 {
 	[self mapCourse];
 	[self mapUser];
+    [RKClient sharedClient].requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
 	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
