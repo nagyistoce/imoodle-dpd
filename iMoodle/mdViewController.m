@@ -23,6 +23,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	_tableView.dataSource = self;
+	_tableView.delegate = self;
 	// Do any additional setup after loading the view, typically from a nib.
 	RKObjectManager* restKitObjectManager = [RKObjectManager sharedManager];
 	restKitObjectManager.client.baseURL = @"http://moodle.openfmi.net";
@@ -67,38 +69,29 @@
 
 #pragma mark RKObjectLoaderDelegate methods
 
-- (void)request:(RKRequest*)request didLoadResponse:(RKResponse*)response 
-{
-    NSLog(@"Loaded payload: %@", [response bodyAsString]);
-}
-
 - (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData
 {
 	NSDictionary* response = [*mappableData valueForKey:@"RESPONSE"];
 	NSDictionary* multiple = [response valueForKey:@"MULTIPLE"];
 	NSArray* singles = [multiple valueForKey:@"SINGLE"];
-	NSMutableArray* objects = [NSMutableArray new];
 	for (NSDictionary* single in singles)
 	{
-		NSMutableDictionary* result = [NSMutableDictionary new];
 		for (NSDictionary* keyValuePair in [single valueForKey:@"KEY"])
 		{
-			[result setValue:[keyValuePair valueForKey:@"VALUE"] forKey:[keyValuePair valueForKey:@"name"]];
+			[single setValue:[keyValuePair valueForKey:@"VALUE"] forKey:[keyValuePair valueForKey:@"name"]];
 		}
-		[objects addObject:result];
 	}
-	*mappableData = objects;
 }
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects 
 {
-	NSLog(@"Loaded statuses: %@", objects);
+	_courses = objects;
 	[_tableView reloadData];
 }
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error 
 {
-	UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Unable to connect to Moodle." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 	[alert show];
 	NSLog(@"Hit error: %@", error);
 }
@@ -107,7 +100,7 @@
 
 - (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-	CGSize size = [[[_courses objectAtIndex:indexPath.row] text] sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(300, 9000)];
+	CGSize size = [[[_courses objectAtIndex:indexPath.row] fullname] sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(300, 9000)];
 	return size.height + 10;
 }
 
@@ -120,16 +113,16 @@
 
 - (UITableViewCell *)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-	NSString* reuseIdentifier = @"Tweet Cell";
+	NSString* reuseIdentifier = @"Moodle Cell";
 	UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-	if (nil == cell) {
+	if (cell == nil) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
 		cell.textLabel.font = [UIFont systemFontOfSize:14];
 		cell.textLabel.numberOfLines = 0;
 		cell.textLabel.backgroundColor = [UIColor clearColor];
 		cell.contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"listbg.png"]];
 	}
-	cell.textLabel.text = [[_courses objectAtIndex:indexPath.row] text];
+	cell.textLabel.text = [[_courses objectAtIndex:indexPath.row] fullname];
 	return cell;
 }
 

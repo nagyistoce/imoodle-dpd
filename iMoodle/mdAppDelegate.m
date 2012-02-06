@@ -46,7 +46,7 @@
 	[restKitObjectMapping mapKeyPath:@"lang" toAttribute:@"lang"];
 	RKObjectManager* restKitObjectManager = [RKObjectManager objectManagerWithBaseURL:@"http://moodle.openfmi.net"];
 	restKitObjectManager.acceptMIMEType = RKMIMETypeXML;
-	[restKitObjectManager.mappingProvider setMapping:restKitObjectMapping forKeyPath:@""];
+	[restKitObjectManager.mappingProvider setMapping:restKitObjectMapping forKeyPath:@"RESPONSE.MULTIPLE.SINGLE"];
 }
 
 -(void)mapUser
