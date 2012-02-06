@@ -11,27 +11,27 @@
 @implementation mdCourse
 
 @synthesize id;
-@synthesize shortname;
-@synthesize categoryid;
-@synthesize categorysortorder;
-@synthesize fullname;
-@synthesize idnumber;
+@synthesize shortName;
+@synthesize categoryID;
+@synthesize categorySortOrder;
+@synthesize fullName;
+@synthesize IDNumber;
 @synthesize summary;
-@synthesize summaryformat;
+@synthesize summaryFormat;
 @synthesize format;
-@synthesize showgrades;
-@synthesize newsitems;
-@synthesize numsections;
-@synthesize maxbytes;
+@synthesize showGrades;
+@synthesize newsItems;
+@synthesize numberOfSections;
+@synthesize maxBytes;
 @synthesize visible;
-@synthesize hiddensections;
-@synthesize groupmodeforce;
-@synthesize defaultgroupingid;
-@synthesize timecreated;
-@synthesize timemodified;
-@synthesize enablecompletion;
-@synthesize completionstartonenrol;
-@synthesize completionnotify;
-@synthesize lang;
+@synthesize hiddenSections;
+@synthesize groupModeForce;
+@synthesize defaultGroupingID;
+@synthesize timeCreated;
+@synthesize timeModified;
+@synthesize enableCompletion;
+@synthesize completionStartOnEnrol;
+@synthesize completionNotify;
+@synthesize language;
 
 @end

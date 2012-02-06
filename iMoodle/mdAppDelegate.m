@@ -21,45 +21,46 @@
 - (void)mapCourse
 {
     RKObjectMapping* restKitObjectMapping = [RKObjectMapping mappingForClass:[mdCourse class]];
-	[restKitObjectMapping mapKeyPath:@"id" toAttribute:@"id"];
-	[restKitObjectMapping mapKeyPath:@"shortname" toAttribute:@"shortname"];
-	[restKitObjectMapping mapKeyPath:@"categoryid" toAttribute:@"categoryid"];
-	[restKitObjectMapping mapKeyPath:@"categorysortorder" toAttribute:@"categorysortorder"];
-	[restKitObjectMapping mapKeyPath:@"fullname" toAttribute:@"fullname"];
-	[restKitObjectMapping mapKeyPath:@"idnumber" toAttribute:@"idnumber"];
-	[restKitObjectMapping mapKeyPath:@"summary" toAttribute:@"summary"];
-	[restKitObjectMapping mapKeyPath:@"summaryformat" toAttribute:@"summaryformat"];
-	[restKitObjectMapping mapKeyPath:@"format" toAttribute:@"format"];
-	[restKitObjectMapping mapKeyPath:@"showgrades" toAttribute:@"showgrades"];
-	[restKitObjectMapping mapKeyPath:@"newsitems" toAttribute:@"newsitems"];
-	[restKitObjectMapping mapKeyPath:@"numsections" toAttribute:@"numsections"];
-	[restKitObjectMapping mapKeyPath:@"maxbytes" toAttribute:@"maxbytes"];
-	[restKitObjectMapping mapKeyPath:@"visible" toAttribute:@"visible"];
-	[restKitObjectMapping mapKeyPath:@"hiddensections" toAttribute:@"hiddensections"];
-	[restKitObjectMapping mapKeyPath:@"groupmodeforce" toAttribute:@"groupmodeforce"];
-	[restKitObjectMapping mapKeyPath:@"defaultgroupingid" toAttribute:@"defaultgroupingid"];
-	[restKitObjectMapping mapKeyPath:@"timecreated" toAttribute:@"timecreated"];
-	[restKitObjectMapping mapKeyPath:@"timemodified" toAttribute:@"timemodified"];
-	[restKitObjectMapping mapKeyPath:@"enablecompletion" toAttribute:@"enablecompletion"];
-	[restKitObjectMapping mapKeyPath:@"completionstartonenrol" toAttribute:@"completionstartonenrol"];
-	[restKitObjectMapping mapKeyPath:@"completionnotify" toAttribute:@"completionnotify"];
-	[restKitObjectMapping mapKeyPath:@"lang" toAttribute:@"lang"];
+	[restKitObjectMapping mapKeyPathsToAttributes:
+		@"id", @"id", 
+		@"shortname", @"shortName",
+		@"categoryid", @"categoryID",
+		@"categorysortorder", @"categorySortOrder",
+		@"fullname", @"fullName",
+		@"idnumber", @"IDNumber",
+		@"summary", @"summary",
+		@"summaryformat", @"summaryFormat",
+		@"format", @"format",
+		@"showgrades", @"showGrades",
+		@"newsitems", @"newsItems",
+		@"numsections", @"numberOfSections",
+		@"maxbytes", @"maxBytes",
+		@"visible", @"visible",
+		@"hiddensections", @"hiddenSections",
+		@"groupmodeforce", @"groupModeForce",
+		@"defaultgroupingid", @"defaultGroupingID",
+		@"timecreated", @"timeCreated",
+		@"timemodified", @"timeModified",
+		@"enablecompletion", @"enableCompletion",
+		@"completionstartonenrol", @"completionStartOnEnrol",
+		@"completionnotify", @"completionNotify",
+		@"lang", @"language", nil];
 	RKObjectManager* restKitObjectManager = [RKObjectManager objectManagerWithBaseURL:@"http://moodle.openfmi.net"];
-	restKitObjectManager.acceptMIMEType = RKMIMETypeXML;
 	[restKitObjectManager.mappingProvider setMapping:restKitObjectMapping forKeyPath:@"RESPONSE.MULTIPLE.SINGLE"];
 }
 
 -(void)mapUser
 {
     RKObjectMapping* restKitObjectMapping = [RKObjectMapping mappingForClass:[mdUser class]];
-	[restKitObjectMapping mapKeyPath:@"courseid" toAttribute:@"courseid"];
-	[restKitObjectMapping mapKeyPath:@"userid" toAttribute:@"userid"];
-	[restKitObjectMapping mapKeyPath:@"firstname" toAttribute:@"firstname"];
-	[restKitObjectMapping mapKeyPath:@"lastname" toAttribute:@"lastname"];
-	[restKitObjectMapping mapKeyPath:@"fullname" toAttribute:@"fullname"];
-	[restKitObjectMapping mapKeyPath:@"username" toAttribute:@"username"];
-	[restKitObjectMapping mapKeyPath:@"profileimgurl" toAttribute:@"profileimgurl"];
-	[restKitObjectMapping mapKeyPath:@"profileimgurlsmall" toAttribute:@"profileimgurlsmall"];
+	[restKitObjectMapping mapKeyPathsToAttributes:
+		@"courseid", @"courseid",
+		@"userid", @"userid",
+		@"firstname", @"firstname",
+		@"lastname", @"lastname",
+		@"fullname", @"fullname",
+		@"username", @"username",
+		@"profileimgurl", @"profileimgurl",
+		@"profileimgurlsmall", @"profileimgurlsmall", nil];
 	RKObjectManager* restKitObjectManager = [RKObjectManager objectManagerWithBaseURL:@"http://moodle.openfmi.net/"];
 	[restKitObjectManager.mappingProvider setMapping:restKitObjectMapping forKeyPath:@"user"];
 }

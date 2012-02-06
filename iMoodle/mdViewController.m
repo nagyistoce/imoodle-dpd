@@ -12,12 +12,6 @@
 
 @implementation mdViewController
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
-
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -31,34 +25,6 @@
 	restKitObjectManager.acceptMIMEType = RKMIMETypeXML;
 	NSString* resourcePath = @"/webservice/rest/server.php?wstoken=091d9d94bf2044c7d54aebcb1420dc53&wsfunction=moodle_course_get_courses";
 	[restKitObjectManager loadObjectsAtResourcePath:resourcePath delegate:self];
-}
-
-- (void)viewDidUnload
-{
-	_tableView = nil;
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -100,7 +66,7 @@
 
 - (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-	CGSize size = [[[_courses objectAtIndex:indexPath.row] fullname] sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(300, 9000)];
+	CGSize size = [[[_courses objectAtIndex:indexPath.row] fullName] sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(300, 9000)];
 	return size.height + 10;
 }
 
@@ -122,7 +88,7 @@
 		cell.textLabel.backgroundColor = [UIColor clearColor];
 		cell.contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"listbg.png"]];
 	}
-	cell.textLabel.text = [[_courses objectAtIndex:indexPath.row] fullname];
+	cell.textLabel.text = [[_courses objectAtIndex:indexPath.row] fullName];
 	return cell;
 }
 
