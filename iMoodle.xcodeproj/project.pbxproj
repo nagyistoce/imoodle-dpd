@@ -188,12 +188,12 @@
 				626C69F014D3465F009AC790 /* Model */,
 				6200662914D1E17A00847E6B /* MDAppDelegate.h */,
 				6200662A14D1E17A00847E6B /* MDAppDelegate.m */,
-				6200E40214E1BB9100E29610 /* MDUsersViewController.h */,
-				6200E40314E1BB9100E29610 /* MDUsersViewController.m */,
-				6200E40414E1BB9100E29610 /* MDUsersViewController.xib */,
 				62C73F1114E1C4C100DB7B29 /* MDCoursesViewController.h */,
 				62C73F1214E1C4C100DB7B29 /* MDCoursesViewController.m */,
 				62C73F1314E1C4C100DB7B29 /* MDCoursesViewController.xib */,
+				6200E40214E1BB9100E29610 /* MDUsersViewController.h */,
+				6200E40314E1BB9100E29610 /* MDUsersViewController.m */,
+				6200E40414E1BB9100E29610 /* MDUsersViewController.xib */,
 				6200662114D1E17A00847E6B /* Supporting Files */,
 			);
 			path = iMoodle;
