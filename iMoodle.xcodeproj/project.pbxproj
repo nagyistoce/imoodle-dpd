@@ -14,7 +14,6 @@
 		6200662714D1E17A00847E6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6200662614D1E17A00847E6B /* main.m */; };
 		6200662B14D1E17A00847E6B /* MDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6200662A14D1E17A00847E6B /* MDAppDelegate.m */; };
 		6200662E14D1E17A00847E6B /* MDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6200662D14D1E17A00847E6B /* MDViewController.m */; };
-		6200663114D1E17A00847E6B /* MDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6200662F14D1E17A00847E6B /* MDViewController.xib */; };
 		6200663914D1E17B00847E6B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6200663814D1E17B00847E6B /* SenTestingKit.framework */; };
 		6200663A14D1E17B00847E6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6200661A14D1E17A00847E6B /* UIKit.framework */; };
 		6200663B14D1E17B00847E6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6200661C14D1E17A00847E6B /* Foundation.framework */; };
@@ -31,6 +30,7 @@
 		6200E40614E1BB9100E29610 /* MDUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6200E40414E1BB9100E29610 /* MDUsersViewController.xib */; };
 		626C69F614D3469F009AC790 /* MDCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 626C69F514D3469F009AC790 /* MDCourse.m */; };
 		626C69F914D34E64009AC790 /* MDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 626C69F814D34E64009AC790 /* MDUser.m */; };
+		62C73F1014E1C41900DB7B29 /* MDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C73F0F14E1C41900DB7B29 /* MDViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +91,6 @@
 		6200662A14D1E17A00847E6B /* MDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAppDelegate.m; sourceTree = "<group>"; };
 		6200662C14D1E17A00847E6B /* MDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDViewController.h; sourceTree = "<group>"; };
 		6200662D14D1E17A00847E6B /* MDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDViewController.m; sourceTree = "<group>"; };
-		6200663014D1E17A00847E6B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MDViewController.xib; sourceTree = "<group>"; };
 		6200663714D1E17B00847E6B /* iMoodleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMoodleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6200663814D1E17B00847E6B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		6200664014D1E17B00847E6B /* iMoodleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMoodleTests-Info.plist"; sourceTree = "<group>"; };
@@ -112,6 +111,7 @@
 		626C69F514D3469F009AC790 /* MDCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCourse.m; sourceTree = "<group>"; };
 		626C69F714D34E64009AC790 /* MDUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDUser.h; sourceTree = "<group>"; };
 		626C69F814D34E64009AC790 /* MDUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDUser.m; sourceTree = "<group>"; };
+		62C73F0F14E1C41900DB7B29 /* MDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +190,7 @@
 				6200662A14D1E17A00847E6B /* MDAppDelegate.m */,
 				6200662C14D1E17A00847E6B /* MDViewController.h */,
 				6200662D14D1E17A00847E6B /* MDViewController.m */,
-				6200662F14D1E17A00847E6B /* MDViewController.xib */,
+				62C73F0F14E1C41900DB7B29 /* MDViewController.xib */,
 				6200E40214E1BB9100E29610 /* MDUsersViewController.h */,
 				6200E40314E1BB9100E29610 /* MDUsersViewController.m */,
 				6200E40414E1BB9100E29610 /* MDUsersViewController.xib */,
@@ -360,8 +360,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6200662514D1E17A00847E6B /* InfoPlist.strings in Resources */,
-				6200663114D1E17A00847E6B /* MDViewController.xib in Resources */,
 				6200E40614E1BB9100E29610 /* MDUsersViewController.xib in Resources */,
+				62C73F1014E1C41900DB7B29 /* MDViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,14 +435,6 @@
 				6200662414D1E17A00847E6B /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		6200662F14D1E17A00847E6B /* MDViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6200663014D1E17A00847E6B /* en */,
-			);
-			name = MDViewController.xib;
 			sourceTree = "<group>";
 		};
 		6200664114D1E17B00847E6B /* InfoPlist.strings */ = {
