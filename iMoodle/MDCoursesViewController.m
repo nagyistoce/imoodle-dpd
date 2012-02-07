@@ -6,12 +6,13 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "MDViewController.h"
+#import "MDCoursesViewController.h"
 #import "MDUsersViewController.h"
 #import "MDCourse.h"
 #import <RestKit/RestKit.h>
 
 @implementation MDViewController
+
 @synthesize segmentedControlMineAll;
 @synthesize tableViewCourses;
 
@@ -61,6 +62,8 @@
 	[self setSegmentedControlMineAll:nil];
 	[self setTableViewCourses:nil];
 	[self setSegmentedControlMineAll:nil];
+	[self setSegmentedControlMineAll:nil];
+	[self setTableViewCourses:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -205,4 +208,6 @@
 	NSLog(@"Hit error: %@", error);
 }
 
+- (IBAction)segmentedControlMineAllValueChanged:(id)sender {
+}
 @end

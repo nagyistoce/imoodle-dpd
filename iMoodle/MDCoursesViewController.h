@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RestKit/RestKit.h>
 
-@interface MDViewController : UITableViewController
+@interface MDViewController : UITableViewController<RKObjectLoaderDelegate>
+{
+	NSArray* _courses;
+}
+
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlMineAll;
+@property (strong, nonatomic) IBOutlet UITableView *tableViewCourses;
+
+- (IBAction)segmentedControlMineAllValueChanged:(id)sender;
 
 @end
