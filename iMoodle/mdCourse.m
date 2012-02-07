@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "mdCourse.h"
+#import "MDCourse.h"
 
-@implementation mdCourse
+@implementation MDCourse
 
 @synthesize id;
 @synthesize shortName;

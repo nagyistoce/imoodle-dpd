@@ -10,7 +10,15 @@
 #import "mdCourse.h"
 #import <RestKit/RestKit.h>
 
-@implementation mdViewController
+@implementation MDViewController
+
+-(void)loadCourses:(NSString*)function
+{
+	RKObjectManager* restKitObjectManager = [RKObjectManager sharedManager];
+	restKitObjectManager.client.baseURL = @"http://moodle.openfmi.net";
+	NSString* resourcePath = [@"/webservice/rest/server.php?wstoken=091d9d94bf2044c7d54aebcb1420dc53&wsfunction=" stringByAppendingString:function];
+	[restKitObjectManager loadObjectsAtResourcePath:resourcePath delegate:self];
+}
 
 #pragma mark - View lifecycle
 
@@ -20,10 +28,7 @@
 	_tableView.dataSource = self;
 	_tableView.delegate = self;
 	// Do any additional setup after loading the view, typically from a nib.
-	RKObjectManager* restKitObjectManager = [RKObjectManager sharedManager];
-	restKitObjectManager.client.baseURL = @"http://moodle.openfmi.net";
-	NSString* resourcePath = @"/webservice/rest/server.php?wstoken=091d9d94bf2044c7d54aebcb1420dc53&wsfunction=moodle_course_get_courses";
-	[restKitObjectManager loadObjectsAtResourcePath:resourcePath delegate:self];
+	[self loadCourses:@"moodle_enrol_get_users_courses&userid=393"];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -34,7 +39,7 @@
 
 #pragma mark RKObjectLoaderDelegate methods
 
-- (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData
+- (void)objectLoader:(RKObjectLoader*)loader willMapData:(inout id*)mappableData
 {
 	for (NSDictionary* single in [[[*mappableData valueForKey:@"RESPONSE"] valueForKey:@"MULTIPLE"] valueForKey:@"SINGLE"])
 	{
@@ -89,4 +94,20 @@
 	return cell;
 }
 
+- (void)viewDidUnload {
+	_switchCourses = nil;
+	[super viewDidUnload];
+}
+
+- (IBAction)switchCoursesValueChanged:(id)sender 
+{
+	if (_switchCourses.selectedSegmentIndex == 0)
+	{
+		[self loadCourses:@"moodle_enrol_get_users_courses&userid=393"];
+	}
+	else
+	{
+		[self loadCourses:@"moodle_course_get_courses"];
+	}
+}
 @end

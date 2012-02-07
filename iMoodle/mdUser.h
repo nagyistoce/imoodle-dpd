@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface mdUser : NSObject
+@interface MDUser : NSObject
 
 @property (nonatomic) int courseid;
 @property (nonatomic) int userid;

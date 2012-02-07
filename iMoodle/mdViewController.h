@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <RestKit/RestKit.h>
 
-@interface mdViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, RKObjectLoaderDelegate>
+@interface MDViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, RKObjectLoaderDelegate>
 {
+	IBOutlet UISegmentedControl* _switchCourses;
 	IBOutlet UITableView* _tableView;
 	
 	NSString* _token;
 	NSArray* _courses;
 }
+- (IBAction)switchCoursesValueChanged:(id)sender;
 
 @end

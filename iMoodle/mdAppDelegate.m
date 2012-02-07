@@ -6,21 +6,21 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "mdAppDelegate.h"
+#import "MDAppDelegate.h"
 
-#import "mdViewController.h"
+#import "MDViewController.h"
 #import <RestKit/RestKit.h>
-#import "mdCourse.h"
-#import "mdUser.h"
+#import "MDCourse.h"
+#import "MDUser.h"
 
-@implementation mdAppDelegate
+@implementation MDAppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
 
 - (void)mapCourse
 {
-    RKObjectMapping* restKitObjectMapping = [RKObjectMapping mappingForClass:[mdCourse class]];
+    RKObjectMapping* restKitObjectMapping = [RKObjectMapping mappingForClass:[MDCourse class]];
 	[restKitObjectMapping mapKeyPathsToAttributes:
 		@"id", @"id", 
 		@"shortname", @"shortName",
@@ -51,7 +51,7 @@
 
 -(void)mapUser
 {
-    RKObjectMapping* restKitObjectMapping = [RKObjectMapping mappingForClass:[mdUser class]];
+    RKObjectMapping* restKitObjectMapping = [RKObjectMapping mappingForClass:[MDUser class]];
 	[restKitObjectMapping mapKeyPathsToAttributes:
 		@"courseid", @"courseid",
 		@"userid", @"userid",
@@ -73,7 +73,7 @@
 	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-	self.viewController = [[mdViewController alloc] initWithNibName:@"mdViewController" bundle:nil];
+	self.viewController = [[MDViewController alloc] initWithNibName:@"MDViewController" bundle:nil];
 	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

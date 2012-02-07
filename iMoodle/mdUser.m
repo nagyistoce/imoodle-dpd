@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "mdUser.h"
+#import "MDUser.h"
 
-@implementation mdUser
+@implementation MDUser
 
 @synthesize courseid;
 @synthesize userid;

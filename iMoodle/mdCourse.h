@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface mdCourse : NSObject
+@interface MDCourse : NSObject
 
 @property (nonatomic) int id;
 @property (nonatomic, retain) NSString* shortName;
