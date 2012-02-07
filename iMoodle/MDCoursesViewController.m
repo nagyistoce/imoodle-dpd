@@ -11,7 +11,7 @@
 #import "MDCourse.h"
 #import <RestKit/RestKit.h>
 
-@implementation MDViewController
+@implementation MDCoursesViewController
 
 @synthesize segmentedControlMineAll;
 @synthesize tableViewCourses;
@@ -170,7 +170,7 @@
 	return size.height + 10;
 }
 
-- (IBAction)segmentedControlMineOrAllValueChanged:(id)sender 
+- (IBAction)segmentedControlMineAllValueChanged:(id)sender 
 {
 	if (segmentedControlMineAll.selectedSegmentIndex == 0)
 	{
@@ -208,6 +208,4 @@
 	NSLog(@"Hit error: %@", error);
 }
 
-- (IBAction)segmentedControlMineAllValueChanged:(id)sender {
-}
 @end

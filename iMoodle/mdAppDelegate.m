@@ -8,7 +8,7 @@
 
 #import "MDAppDelegate.h"
 
-#import "MDViewController.h"
+#import "MDCoursesViewController.h"
 #import <RestKit/RestKit.h>
 #import "MDCourse.h"
 #import "MDUser.h"
@@ -73,7 +73,7 @@
 	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-	self.viewController = [[MDViewController alloc] initWithNibName:@"MDViewController" bundle:nil];
+	self.viewController = [[MDCoursesViewController alloc] initWithNibName:@"MDCoursesViewController" bundle:nil];
 	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

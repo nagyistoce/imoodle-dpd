@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class MDViewController;
+@class MDCoursesViewController;
 
 @interface MDAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) MDViewController *viewController;
+@property (strong, nonatomic) MDCoursesViewController *viewController;
 
 @end

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <RestKit/RestKit.h>
 
-@interface MDViewController : UITableViewController<RKObjectLoaderDelegate>
+@interface MDCoursesViewController : UITableViewController<RKObjectLoaderDelegate>
 {
 	NSArray* _courses;
 }
