@@ -6,8 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "mdViewController.h"
-#import "mdCourse.h"
+#import "MDViewController.h"
+#import "MDUsersViewController.h"
+#import "MDCourse.h"
 #import <RestKit/RestKit.h>
 
 @implementation MDViewController
@@ -71,6 +72,13 @@
 	return size.height + 10;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+     MDUsersViewController* usersViewController = [[MDUsersViewController alloc] initWithNibName:@"MDUsersViewController" bundle:nil];
+     [self.navigationController pushViewController:usersViewController animated:YES];
+}
+
+
 #pragma mark UITableViewDataSource methods
 
 - (NSInteger)tableView:(UITableView*)table numberOfRowsInSection:(NSInteger)section 
@@ -78,7 +86,7 @@
 	return [_courses count];
 }
 
-- (UITableViewCell *)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
 	NSString* reuseIdentifier = @"Moodle Cell";
 	UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
@@ -88,13 +96,13 @@
 		cell.textLabel.font = [UIFont systemFontOfSize:14];
 		cell.textLabel.numberOfLines = 0;
 		cell.textLabel.backgroundColor = [UIColor clearColor];
-		cell.contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"listbg.png"]];
 	}
 	cell.textLabel.text = [[_courses objectAtIndex:indexPath.row] fullName];
 	return cell;
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload 
+{
 	_switchCourses = nil;
 	[super viewDidUnload];
 }
