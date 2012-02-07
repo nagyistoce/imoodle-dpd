@@ -29,8 +29,8 @@
 		6200E40614E1BB9100E29610 /* MDUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6200E40414E1BB9100E29610 /* MDUsersViewController.xib */; };
 		626C69F614D3469F009AC790 /* MDCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 626C69F514D3469F009AC790 /* MDCourse.m */; };
 		626C69F914D34E64009AC790 /* MDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 626C69F814D34E64009AC790 /* MDUser.m */; };
-		62C73F1414E1C4C100DB7B29 /* MDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C73F1214E1C4C100DB7B29 /* MDViewController.m */; };
-		62C73F1514E1C4C100DB7B29 /* MDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C73F1314E1C4C100DB7B29 /* MDViewController.xib */; };
+		62C73F1414E1C4C100DB7B29 /* MDCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C73F1214E1C4C100DB7B29 /* MDCoursesViewController.m */; };
+		62C73F1514E1C4C100DB7B29 /* MDCoursesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C73F1314E1C4C100DB7B29 /* MDCoursesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,9 +109,9 @@
 		626C69F514D3469F009AC790 /* MDCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCourse.m; sourceTree = "<group>"; };
 		626C69F714D34E64009AC790 /* MDUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDUser.h; sourceTree = "<group>"; };
 		626C69F814D34E64009AC790 /* MDUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDUser.m; sourceTree = "<group>"; };
-		62C73F1114E1C4C100DB7B29 /* MDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDViewController.h; sourceTree = "<group>"; };
-		62C73F1214E1C4C100DB7B29 /* MDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDViewController.m; sourceTree = "<group>"; };
-		62C73F1314E1C4C100DB7B29 /* MDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDViewController.xib; sourceTree = "<group>"; };
+		62C73F1114E1C4C100DB7B29 /* MDCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCoursesViewController.h; sourceTree = "<group>"; };
+		62C73F1214E1C4C100DB7B29 /* MDCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCoursesViewController.m; sourceTree = "<group>"; };
+		62C73F1314E1C4C100DB7B29 /* MDCoursesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDCoursesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,9 +191,9 @@
 				6200E40214E1BB9100E29610 /* MDUsersViewController.h */,
 				6200E40314E1BB9100E29610 /* MDUsersViewController.m */,
 				6200E40414E1BB9100E29610 /* MDUsersViewController.xib */,
-				62C73F1114E1C4C100DB7B29 /* MDViewController.h */,
-				62C73F1214E1C4C100DB7B29 /* MDViewController.m */,
-				62C73F1314E1C4C100DB7B29 /* MDViewController.xib */,
+				62C73F1114E1C4C100DB7B29 /* MDCoursesViewController.h */,
+				62C73F1214E1C4C100DB7B29 /* MDCoursesViewController.m */,
+				62C73F1314E1C4C100DB7B29 /* MDCoursesViewController.xib */,
 				6200662114D1E17A00847E6B /* Supporting Files */,
 			);
 			path = iMoodle;
@@ -361,7 +361,7 @@
 			files = (
 				6200662514D1E17A00847E6B /* InfoPlist.strings in Resources */,
 				6200E40614E1BB9100E29610 /* MDUsersViewController.xib in Resources */,
-				62C73F1514E1C4C100DB7B29 /* MDViewController.xib in Resources */,
+				62C73F1514E1C4C100DB7B29 /* MDCoursesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +401,7 @@
 				626C69F614D3469F009AC790 /* MDCourse.m in Sources */,
 				626C69F914D34E64009AC790 /* MDUser.m in Sources */,
 				6200E40514E1BB9100E29610 /* MDUsersViewController.m in Sources */,
-				62C73F1414E1C4C100DB7B29 /* MDViewController.m in Sources */,
+				62C73F1414E1C4C100DB7B29 /* MDCoursesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
