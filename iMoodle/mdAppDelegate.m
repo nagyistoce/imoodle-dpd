@@ -73,9 +73,11 @@
 	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-	self.viewController = [[MDCoursesViewController alloc] initWithNibName:@"MDCoursesViewController" bundle:nil];
-	self.window.rootViewController = self.viewController;
+	UINavigationController* navigationController = [[UINavigationController alloc] initWithNibName:@"MDNavigationController" bundle:nil];
+	self.window.rootViewController = self.viewController = navigationController;
     [self.window makeKeyAndVisible];
+	MDCoursesViewController* coursesViewController = [[MDCoursesViewController alloc] initWithNibName:@"MDCoursesViewController" bundle:nil];
+	[navigationController pushViewController:coursesViewController animated:YES];
     return YES;
 }
 
