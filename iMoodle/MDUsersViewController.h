@@ -14,6 +14,7 @@
 	NSArray* _users;
 }
 
+@property int courseID;
 @property (strong, nonatomic) IBOutlet UITableView* tableViewUsers;
 
 @end

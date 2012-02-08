@@ -162,9 +162,10 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	MDUsersViewController* usersViewController = [[MDUsersViewController alloc] initWithNibName:@"MDUsersViewController" bundle:nil];
+	usersViewController.courseID = [[_courses objectAtIndex:indexPath.row] id];
 	[self.navigationController pushViewController:usersViewController animated:YES];
 }
 

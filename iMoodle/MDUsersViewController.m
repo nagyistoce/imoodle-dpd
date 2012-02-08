@@ -10,6 +10,7 @@
 #import "MDUsersViewController.h"
 
 @implementation MDUsersViewController
+@synthesize courseID;
 @synthesize tableViewUsers;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -34,8 +35,8 @@
 {
 	RKObjectManager* restKitObjectManager = [RKObjectManager sharedManager];
 	restKitObjectManager.client.baseURL = @"http://moodle.openfmi.net";
-	NSString* resourcePath = @"/webservice/rest/server.php?wstoken=091d9d94bf2044c7d54aebcb1420dc53&wsfunction=moodle_enrol_get_enrolled_users&courseid=337";// ID from the previous view
-	[restKitObjectManager loadObjectsAtResourcePath:resourcePath delegate:self  
+	NSString* resourcePath = @"/webservice/rest/server.php?wstoken=091d9d94bf2044c7d54aebcb1420dc53&wsfunction=moodle_enrol_get_enrolled_users&courseid=%i";
+	[restKitObjectManager loadObjectsAtResourcePath:[NSString stringWithFormat:resourcePath, courseID] delegate:self  
 						  block:^(RKObjectLoader* loader) 
 						  {
 							  loader.objectMapping = [restKitObjectManager.mappingProvider objectMappingForClass:[MDUser class]];
@@ -94,12 +95,12 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _users.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString* reuseIdentifier = @"Cell";
     
