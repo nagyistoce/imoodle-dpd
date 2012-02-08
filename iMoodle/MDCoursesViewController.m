@@ -39,7 +39,11 @@
 	RKObjectManager* restKitObjectManager = [RKObjectManager sharedManager];
 	restKitObjectManager.client.baseURL = @"http://moodle.openfmi.net";
 	NSString* resourcePath = [@"/webservice/rest/server.php?wstoken=091d9d94bf2044c7d54aebcb1420dc53&wsfunction=" stringByAppendingString:function];
-	[restKitObjectManager loadObjectsAtResourcePath:resourcePath delegate:self];
+	[restKitObjectManager loadObjectsAtResourcePath:resourcePath delegate:self 
+						  block:^(RKObjectLoader* loader) 
+						  {
+							  loader.objectMapping = [restKitObjectManager.mappingProvider objectMappingForClass:[MDCourse class]];
+						  }];
 }
 
 #pragma mark - View lifecycle

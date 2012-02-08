@@ -33,20 +33,13 @@
 -(void)loadUsers
 {
 	RKObjectManager* restKitObjectManager = [RKObjectManager sharedManager];
-	RKObjectMapping* restKitObjectMapping = [RKObjectMapping mappingForClass:[MDUser class]];
-	[restKitObjectMapping mapKeyPathsToAttributes:
-	 @"courseid", @"courseid",
-	 @"userid", @"userid",
-	 @"firstname", @"firstname",
-	 @"lastname", @"lastname",
-	 @"fullname", @"fullname",
-	 @"username", @"username",
-	 @"profileimgurl", @"profileimgurl",
-	 @"profileimgurlsmall", @"profileimgurlsmall", nil];
-	[restKitObjectManager.mappingProvider setMapping:restKitObjectMapping forKeyPath:@"RESPONSE.MULTIPLE.SINGLE"];
 	restKitObjectManager.client.baseURL = @"http://moodle.openfmi.net";
 	NSString* resourcePath = @"/webservice/rest/server.php?wstoken=091d9d94bf2044c7d54aebcb1420dc53&wsfunction=moodle_enrol_get_enrolled_users&courseid=337";// ID from the previous view
-	[restKitObjectManager loadObjectsAtResourcePath:resourcePath delegate:self];
+	[restKitObjectManager loadObjectsAtResourcePath:resourcePath delegate:self  
+						  block:^(RKObjectLoader* loader) 
+						  {
+							  loader.objectMapping = [restKitObjectManager.mappingProvider objectMappingForClass:[MDUser class]];
+						  }];
 }
 
 

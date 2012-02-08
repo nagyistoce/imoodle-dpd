@@ -18,10 +18,13 @@
 @synthesize window = _window;
 @synthesize viewController = _viewController;
 
-- (void)mapCourse
+- (void)map
 {
-    RKObjectMapping* restKitObjectMapping = [RKObjectMapping mappingForClass:[MDCourse class]];
-	[restKitObjectMapping mapKeyPathsToAttributes:
+	RKObjectManager* restKitObjectManager = [RKObjectManager objectManagerWithBaseURL:@"http://moodle.openfmi.net"];
+	
+    RKObjectMapping* courseObjectMapping = [RKObjectMapping mappingForClass:[MDCourse class]];
+	courseObjectMapping.rootKeyPath = @"RESPONSE.MULTIPLE.SINGLE";
+	[courseObjectMapping mapKeyPathsToAttributes:
 		@"id", @"id", 
 		@"shortname", @"shortName",
 		@"categoryid", @"categoryID",
@@ -45,14 +48,11 @@
 		@"completionstartonenrol", @"completionStartOnEnrol",
 		@"completionnotify", @"completionNotify",
 		@"lang", @"language", nil];
-	RKObjectManager* restKitObjectManager = [RKObjectManager objectManagerWithBaseURL:@"http://moodle.openfmi.net"];
-	[restKitObjectManager.mappingProvider setMapping:restKitObjectMapping forKeyPath:@"RESPONSE.MULTIPLE.SINGLE"];
-}
-
--(void)mapUser
-{
-    RKObjectMapping* restKitObjectMapping = [RKObjectMapping mappingForClass:[MDUser class]];
-	[restKitObjectMapping mapKeyPathsToAttributes:
+	[restKitObjectManager.mappingProvider setMapping:courseObjectMapping forKeyPath:@"course"];
+	
+    RKObjectMapping* userObjectMapping = [RKObjectMapping mappingForClass:[MDUser class]];
+	userObjectMapping.rootKeyPath = @"RESPONSE.MULTIPLE.SINGLE";
+	[userObjectMapping mapKeyPathsToAttributes:
 		@"courseid", @"courseid",
 		@"userid", @"userid",
 		@"firstname", @"firstname",
@@ -61,14 +61,12 @@
 		@"username", @"username",
 		@"profileimgurl", @"profileimgurl",
 		@"profileimgurlsmall", @"profileimgurlsmall", nil];
-	RKObjectManager* restKitObjectManager = [RKObjectManager objectManagerWithBaseURL:@"http://moodle.openfmi.net/"];
-	[restKitObjectManager.mappingProvider setMapping:restKitObjectMapping forKeyPath:@"user"];
+	[restKitObjectManager.mappingProvider setMapping:userObjectMapping forKeyPath:@"user"];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	[self mapCourse];
-	[self mapUser];
+	[self map];
     [RKClient sharedClient].requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
 	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
