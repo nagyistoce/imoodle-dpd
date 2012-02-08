@@ -27,6 +27,7 @@
 		6200669314D1E58500847E6B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6200668D14D1E58500847E6B /* SystemConfiguration.framework */; };
 		6200E40514E1BB9100E29610 /* MDUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6200E40314E1BB9100E29610 /* MDUsersViewController.m */; };
 		6200E40614E1BB9100E29610 /* MDUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6200E40414E1BB9100E29610 /* MDUsersViewController.xib */; };
+		623426EF14E2F358006CD449 /* MDNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 623426EE14E2F358006CD449 /* MDNavigationController.xib */; };
 		626C69F614D3469F009AC790 /* MDCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 626C69F514D3469F009AC790 /* MDCourse.m */; };
 		626C69F914D34E64009AC790 /* MDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 626C69F814D34E64009AC790 /* MDUser.m */; };
 		62C73F1414E1C4C100DB7B29 /* MDCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C73F1214E1C4C100DB7B29 /* MDCoursesViewController.m */; };
@@ -105,6 +106,7 @@
 		6200E40214E1BB9100E29610 /* MDUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDUsersViewController.h; sourceTree = "<group>"; };
 		6200E40314E1BB9100E29610 /* MDUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDUsersViewController.m; sourceTree = "<group>"; };
 		6200E40414E1BB9100E29610 /* MDUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDUsersViewController.xib; sourceTree = "<group>"; };
+		623426EE14E2F358006CD449 /* MDNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDNavigationController.xib; sourceTree = "<group>"; };
 		626C69F414D3469F009AC790 /* MDCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDCourse.h; sourceTree = "<group>"; };
 		626C69F514D3469F009AC790 /* MDCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDCourse.m; sourceTree = "<group>"; };
 		626C69F714D34E64009AC790 /* MDUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDUser.h; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				6200E40214E1BB9100E29610 /* MDUsersViewController.h */,
 				6200E40314E1BB9100E29610 /* MDUsersViewController.m */,
 				6200E40414E1BB9100E29610 /* MDUsersViewController.xib */,
+				623426EE14E2F358006CD449 /* MDNavigationController.xib */,
 				6200662114D1E17A00847E6B /* Supporting Files */,
 			);
 			path = iMoodle;
@@ -362,6 +365,7 @@
 				6200662514D1E17A00847E6B /* InfoPlist.strings in Resources */,
 				6200E40614E1BB9100E29610 /* MDUsersViewController.xib in Resources */,
 				62C73F1514E1C4C100DB7B29 /* MDCoursesViewController.xib in Resources */,
+				623426EF14E2F358006CD449 /* MDNavigationController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
