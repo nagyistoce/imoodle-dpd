@@ -14,7 +14,6 @@
 	NSArray* _users;
 }
 
-@property (strong, nonatomic) IBOutlet UITableView *tableViewUsers;
-
+@property (strong, nonatomic) IBOutlet UITableView* tableViewUsers;
 
 @end
