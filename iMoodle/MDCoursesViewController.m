@@ -16,6 +16,9 @@
 @synthesize segmentedControlMineAll;
 @synthesize tableViewCourses;
 
+@synthesize token;
+@synthesize userID;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -38,12 +41,17 @@
 {
 	RKObjectManager* restKitObjectManager = [RKObjectManager sharedManager];
 	restKitObjectManager.client.baseURL = @"http://moodle.openfmi.net";
-	NSString* resourcePath = [@"/webservice/rest/server.php?wstoken=091d9d94bf2044c7d54aebcb1420dc53&wsfunction=" stringByAppendingString:function];
-	[restKitObjectManager loadObjectsAtResourcePath:resourcePath delegate:self 
+	NSString* resourcePath = [@"/webservice/rest/server.php?wstoken=%@&wsfunction=" stringByAppendingString:function];
+	[restKitObjectManager loadObjectsAtResourcePath:[NSString stringWithFormat:resourcePath, token] delegate:self 
 						  block:^(RKObjectLoader* loader) 
 						  {
 							  loader.objectMapping = [restKitObjectManager.mappingProvider objectMappingForClass:[MDCourse class]];
 						  }];
+}
+
+-(void)loadUserCourses
+{
+	[self loadCourses:[NSString stringWithFormat:@"moodle_enrol_get_users_courses&userid=%i", userID]];
 }
 
 #pragma mark - View lifecycle
@@ -57,7 +65,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-	[self loadCourses:@"moodle_enrol_get_users_courses&userid=393"];
+	[self loadUserCourses];
 }
 
 - (void)viewDidUnload
@@ -179,7 +187,7 @@
 {
 	if (segmentedControlMineAll.selectedSegmentIndex == 0)
 	{
-		[self loadCourses:@"moodle_enrol_get_users_courses&userid=393"];
+		[self loadUserCourses];
 	}
 	else
 	{

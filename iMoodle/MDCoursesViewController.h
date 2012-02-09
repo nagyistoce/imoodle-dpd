@@ -17,6 +17,9 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControlMineAll;
 @property (strong, nonatomic) IBOutlet UITableView *tableViewCourses;
 
+@property (strong, nonatomic) NSString* token;
+@property int userID;
+
 - (IBAction)segmentedControlMineAllValueChanged:(id)sender;
 
 @end
