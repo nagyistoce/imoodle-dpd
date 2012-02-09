@@ -74,7 +74,15 @@
 
 - (void)objectLoader:(RKObjectLoader*)loader willMapData:(inout id*)mappableData
 {
-	NSDictionary* single = [[*mappableData valueForKey:@"RESPONSE"] valueForKey:@"SINGLE"];
+	NSDictionary* response = [*mappableData valueForKey:@"RESPONSE"];
+	if (response == nil)
+	{
+		return;
+	}
+	NSMutableDictionary* multiple = [NSMutableDictionary new];
+	[multiple setValue:response forKey:@"MULTIPLE"];
+	[*mappableData setValue:multiple forKey:@"RESPONSE"];
+	NSDictionary* single = [response valueForKey:@"SINGLE"];
 	for (NSDictionary* keyValuePair in [single valueForKey:@"KEY"])
 	{
 		[single setValue:[keyValuePair valueForKey:@"VALUE"] forKey:[keyValuePair valueForKey:@"name"]];
@@ -99,12 +107,10 @@
 							  block:^(RKObjectLoader* loader) 
 							  {
 								  loader.objectMapping = [restKitObjectManager.mappingProvider objectMappingForClass:[MDUser class]];
-								  loader.objectMapping.rootKeyPath = @"RESPONSE.SINGLE";
 							  }];
 	}
 	else
 	{
-		objectLoader.objectMapping.rootKeyPath = @"RESPONSE.MULTIPLE.SINGLE";
 		MDUser* user = object;
 		MDCoursesViewController* coursesViewController = [[MDCoursesViewController alloc] initWithNibName:@"MDCoursesViewController" bundle:nil];
 		coursesViewController.token = _token;
