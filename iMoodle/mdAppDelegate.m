@@ -7,9 +7,10 @@
 //
 
 #import "MDAppDelegate.h"
-
 #import "MDCoursesViewController.h"
+#import "MDLoginViewController.h"
 #import <RestKit/RestKit.h>
+#import "MDToken.h"
 #import "MDCourse.h"
 #import "MDUser.h"
 
@@ -21,6 +22,11 @@
 - (void)map
 {
 	RKObjectManager* restKitObjectManager = [RKObjectManager objectManagerWithBaseURL:@"http://moodle.openfmi.net"];
+	
+	RKObjectMapping* tokenObjectMapping = [RKObjectMapping mappingForClass:[MDToken class]];
+	tokenObjectMapping.rootKeyPath = @"";
+	[tokenObjectMapping mapKeyPathsToAttributes:@"token", @"token", nil];
+	[restKitObjectManager.mappingProvider setMapping:tokenObjectMapping forKeyPath:@"token"];
 	
     RKObjectMapping* courseObjectMapping = [RKObjectMapping mappingForClass:[MDCourse class]];
 	courseObjectMapping.rootKeyPath = @"RESPONSE.MULTIPLE.SINGLE";
@@ -68,14 +74,16 @@
 {
 	[self map];
     [RKClient sharedClient].requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
+	[RKClient sharedClient].disableCertificateValidation = YES;
 	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 	UINavigationController* navigationController = [[UINavigationController alloc] initWithNibName:@"MDNavigationController" bundle:nil];
 	self.window.rootViewController = self.viewController = navigationController;
     [self.window makeKeyAndVisible];
-	MDCoursesViewController* coursesViewController = [[MDCoursesViewController alloc] initWithNibName:@"MDCoursesViewController" bundle:nil];
-	[navigationController pushViewController:coursesViewController animated:YES];
+	MDLoginViewController* loginViewController = [[MDLoginViewController alloc] initWithNibName:@"MDLoginViewController" bundle:nil];
+//	MDCoursesViewController* loginViewController = [[MDCoursesViewController alloc] initWithNibName:@"MDCoursesViewController" bundle:nil];
+	[navigationController pushViewController:loginViewController animated:YES];
     return YES;
 }
 
