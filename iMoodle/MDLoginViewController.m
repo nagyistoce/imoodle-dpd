@@ -42,6 +42,11 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+	self.title = @"iMoodle";
+}
+
 - (void)viewDidUnload
 {
     [self setTextFieldUserName:nil];
@@ -113,6 +118,7 @@
 	{
 		MDUser* user = object;
 		MDCoursesViewController* coursesViewController = [[MDCoursesViewController alloc] initWithNibName:@"MDCoursesViewController" bundle:nil];
+		self.title = @"Изход";
 		coursesViewController.token = _token;
 		coursesViewController.userID = user.userid;
 		[self.navigationController pushViewController:coursesViewController animated:YES];
